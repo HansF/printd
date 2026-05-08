@@ -1,0 +1,17 @@
+services:
+  printd:
+    build: .
+    image: ghcr.io/hansf/printd:latest
+    container_name: printd
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "${PRINTD_PORT:-8080}:8080"
+    # USB passthrough — adjust to match your printer's device node.
+    # For network printers, drop `devices:` entirely and set PRINTD_PRINTER_KIND=network.
+    devices:
+      - "/dev/usb/lp0:/dev/usb/lp0"
+    # If your distro uses udev rules that put the printer in the `lp` group,
+    # uncomment to add the container user to it. Otherwise run as root (default).
+    # group_add:
+    #   - "7"   # lp on Debian/Ubuntu
