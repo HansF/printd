@@ -215,6 +215,14 @@ The test suite uses a `DummyConnector` that captures every ESC/POS byte in memor
 
 ---
 
+## Used by
+
+- [exchange-terminal](https://github.com/HansF/exchange-terminal) — a small suite of paper-receipt apps (offerings/demands tickets, oracle fortunes, focus-session timers, AI caricatures, image stencils) that drive printd over its HTTP API.
+
+If you're building on top of printd, open a PR adding your project here.
+
+---
+
 ## Contributing
 
 Bug reports, printer compatibility notes, and PRs welcome. Please:
