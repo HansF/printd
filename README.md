@@ -153,6 +153,18 @@ Drop-in helper: [`examples/client.py`](examples/client.py).
 
 See [`examples/curl.sh`](examples/curl.sh).
 
+### Live demo
+
+[`examples/demo.py`](examples/demo.py) is a 5-step scripted tour that hits every endpoint and prints a real receipt — header → endpoint cheatsheet → server-rendered QR (via raw ESC/POS) → feed → cut.
+
+```bash
+PRINTD_URL=http://localhost:8080 \
+PRINTD_API_KEY=changeme \
+python examples/demo.py
+```
+
+Receipts are generated on the fly with Pillow, so a fresh checkout is enough — no bundled assets, no cropping if your paper width differs.
+
 ---
 
 ## Supported printers
